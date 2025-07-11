@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Practica Web</title>
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" />
+    <!-- Estilos -->
+    <link rel="stylesheet" href="../estilos/index/style.css" />
+    <link rel="stylesheet" href="../estilos/contacto/contacto.css" />
+</head>
+
+<body>
+    <header class="header">
+        <a href="../index.html" class="logo-link" aria-label="Inicio">
+            <img src="../img/logo1.png" alt="Logo Cara" class="logo" />
+        </a>
+
+        <nav>
+            <ul id="navbar" class="navbar">
+                <li><a href="../index.html">Inicio</a></li>
+                <li><a href="../pages/catalogo.html">Catálogo</a></li>
+                <li><a href="../pages/informacion.html">Información</a></li>
+                <li><a href="#">Contacto</a></li>
+                <li>
+                    <a href="./carrito.html" class="active" aria-label="Carrito de compras">
+                        <i class="fa fa-shopping-bag" aria-hidden="true"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" id="close" class="close" aria-label="Cerrar menú">
+                        <i class="far fa-times" aria-hidden="true"></i>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+        <div class="mobile">
+            <a href="./carrito.html" aria-label="Carrito de compras">
+                <i class="fa fa-shopping-bag" aria-hidden="true"></i>
+            </a>
+            <button id="bar" class="fas fa-outdent" aria-label="Abrir menú"></button>
+        </div>
+    </header>
+
+    <main>
+        <section class="form-details">
+            <form action="https://formspree.io/f/tu_codigo_aqui" method="POST" id="formularioContacto" novalidate>
+                <span>CONTACTO</span>
+                <h2>Trabaja con nosotros</h2>
+
+                <div class="campo-control">
+                    <input type="text" id="tuNombre" name="name" placeholder="Nombre y apellido" required />
+                    <div class="texto-error"></div>
+                </div>
+
+                <div class="campo-control">
+                    <input type="email" id="tuCorreo" name="email" placeholder="Correo electrónico" required />
+                    <div class="texto-error"></div>
+                </div>
+
+                <div class="campo-control">
+                    <input type="text" id="asunto" name="subject" placeholder="Referencias" required />
+                    <div class="texto-error"></div>
+                </div>
+
+                <div class="campo-control">
+                    <textarea id="tuMensaje" name="message" rows="10" placeholder="¿Por qué te gustaría trabajar con nosotros?" required></textarea>
+                    <div class="texto-error"></div>
+                </div>
+
+                <div id="mensajeExito" class="mensaje-form exito" hidden>¡Mensaje enviado con éxito!</div>
+                <div id="mensajeError" class="mensaje-form error" hidden>Hubo un error al enviar el mensaje. Intenta nuevamente.</div>
+
+                <button type="submit">Enviar</button>
+            </form>
+        </section>
+
+        <section class="noticias section-p1 section-m1">
+            <div class="newstext">
+                <h4>Suscribite a las noticias</h4>
+                <p>Recibí novedades de nuestra tienda y <span>ofertas exclusivas</span></p>
+            </div>
+            <form class="form" novalidate>
+                <input type="email" placeholder="Correo electrónico" aria-label="Correo electrónico para suscripción" required />
+                <button type="submit">Suscribirme</button>
+            </form>
+        </section>
+    </main>
+
+    <footer class="section-p1">
+        <div class="col">
+            <p><strong>Dirección:</strong> zapatillasaultimomomento@gmail.com</p>
+            <p><strong>Teléfono:</strong> +54 11 1234 5678</p>
+            <p><strong>Horario:</strong> 9:00 - 18:00, Lunes a Viernes</p>
+            <div class="follow">
+                <h4>Seguinos</h4>
+                <div class="icon">
+                    <i class="fab fa-facebook-f" aria-label="Facebook"></i>
+                    <i class="fab fa-twitter" aria-label="Twitter"></i>
+                    <i class="fab fa-instagram" aria-label="Instagram"></i>
+                    <i class="fab fa-pinterest-p" aria-label="Pinterest"></i>
+                    <i class="fab fa-youtube" aria-label="YouTube"></i>
+                </div>
+            </div>
+        </div>
+
+        <div class="col install">
+            <h4>Descargá la App</h4>
+            <p>Desde App Store o Google Play</p>
+            <div class="row">
+                <img src="../img/pay/app.jpg" alt="App Store" />
+                <img src="../img/pay/play.jpg" alt="Google Play" />
+            </div>
+            <p>Pasarelas de pago seguras</p>
+            <img src="../img/pay/pay.png" alt="Métodos de Pago" />
+        </div>
+
+        <div class="copyright">
+            <p>© 2025 Emmanuel Gonzalez | Talento Tech - Plantilla HTML CSS para Ecommerce</p>
+        </div>
+    </footer>
+
+    <script src="../script/script.js" defer></script>
+    <script src="../script/contacto.js" defer></script>
+</body>
+
+</html>
