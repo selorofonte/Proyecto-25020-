@@ -153,8 +153,5 @@ function actualizarTotales() {
         }
     });
 
-    // Actualizar el total general
-    const totalElemento = document.querySelector('#total');
-    if (totalElemento) totalElemento.innerHTML = (subtotal + costoEnvio).toFixed(2);
+    actualizarTotalCarrito(subtotalCalculado);
 }
-
