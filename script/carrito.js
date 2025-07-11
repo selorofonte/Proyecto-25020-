@@ -153,5 +153,6 @@ function actualizarTotales() {
         }
     });
 
+    // Actualizar el total general
     actualizarTotalCarrito(subtotalCalculado);
 }
