@@ -3,7 +3,6 @@ document.addEventListener('DOMContentLoaded', () => {
     cargarProductosCarrito();
 });
 
-// ----------------------------------------------------------------------- //
 // Cargamos los productos que se encuentran en localStorage
 function cargarProductosCarrito() {
     // Obtenemos el carrito
@@ -15,7 +14,7 @@ function cargarProductosCarrito() {
 
     if (carrito.length === 0) {
         // Mostrar mensaje si el carrito está vacío
-        document.querySelector('#tabla_carrito').innerHTML = '<tr><td colspan="6" style="text-align: center; padding: 20px;">Tu carrito está vacío. Agrega productos desde la <a href="./tienda.html">tienda</a>.</td></tr>';
+        document.querySelector('#tabla_carrito').innerHTML = '<tr><td colspan="6" style="text-align: center; padding: 20px;">Tu carrito está vacío. Agrega productos desde la <a href="./catalogo.html">tienda</a>.</td></tr>';
     } else {
         carrito.forEach(producto => {
             const filaHTML = crearFilaProducto(producto);
@@ -31,7 +30,7 @@ function cargarProductosCarrito() {
     eventosFila();
 }
 
-// ---------------------------------------------- //
+
 // Funciones auxiliares
 
 function crearFilaProducto(producto) {
@@ -59,7 +58,7 @@ function actualizarTotalCarrito(subtotal) {
     document.querySelectorAll('#total').forEach(elemento => elemento.innerHTML = subtotal.toFixed(2))
 }
 
-// ------------------------------------------------- //
+
 // Lógica para eliminar o cambiar cantidad
 
 function eventosFila() {
@@ -157,5 +156,4 @@ function actualizarTotales() {
     // Actualizar el total general
     actualizarTotalCarrito(subtotalCalculado);
 }
-
 
