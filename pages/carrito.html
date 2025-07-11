@@ -5,12 +5,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Practica Web</title>
-
-    <!-- Iconos Font Awesome -->
+    <title>Carrito de Compras</title>
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" />
 
-    <!-- Estilos -->
     <link rel="stylesheet" href="../estilos/index/style.css">
     <link rel="stylesheet" href="../estilos/carrito/carrito.css">
 </head>
@@ -19,51 +16,83 @@
     <!-- HEADER -->
     <header class="header">
         <a href="../index.html">
-            <img src="../img/logo1.png" class="logo" alt="Logo Cara" width="40" height="40">
+            <img src="../img/logo1.png" class="logo" alt="Logo Cara" width="40px" height="40px">
         </a>
-        <nav>
+        <div>
             <ul id="navbar" class="navbar">
-                <li><a href="../index.html">Inicio</a></li>
-                <li><a href="../pages/catalogo.html">Catálogo</a></li>
-                <li><a href="../pages/informacion.html">Información</a></li>
-                <li><a href="../pages/contacto.html">Contacto</a></li>
-                <li><a href="./carrito.html" class="active"><i class="fa fa-shopping-bag"></i></a></li>
-                <li><a href="#" id="close" class="close"><i class="far fa-times"></i></a></li>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="tienda.html">Tienda</a></li>
+                <li><a href="#">Blog</a></li>
+                <li><a href="#">Acerca de</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+                <li>
+                    <a href="./carrito.html" class="active">
+                        <i class="fa fa-shopping-bag" aria-hidden="true"></i>
+                    </a>
+                </li>
+                <a href="#" id="close" class="close">
+                    <i class="far fa-times" aria-hidden="true"></i>
+                </a>
             </ul>
-        </nav>
+        </div>
         <div class="mobile">
-            <a href="./carrito.html"><i class="fa fa-shopping-bag"></i></a>
-            <i id="bar" class="fas fa-outdent"></i>
+            <a href="./carrito.html">
+                <i class="fa fa-shopping-bag" aria-hidden="true"></i>
+            </a>
+            <i id="bar" class="fas fa-outdent "></i>
         </div>
     </header>
 
     <!-- MAIN -->
     <main>
-        <!-- Tabla de productos -->
+        <!-- tabla productos -->
         <section id="cart" class="section-p1">
             <table width="100%">
                 <thead>
                     <tr>
-                        <th>Eliminar</th>
-                        <th>Imagen</th>
-                        <th>Producto</th>
-                        <th>Precio</th>
-                        <th>Cantidad</th>
-                        <th>Subtotal</th>
+                        <td>ELIMINAR</td>
+                        <td>IMAGEN</td>
+                        <td>PRODUCTO</td>
+                        <td>PRECIO</td>
+                        <td>CANTIDAD</td>
+                        <td>SUBTOTAL</td>
                     </tr>
                 </thead>
                 <tbody id="tabla_carrito">
-                    <!-- Filas de productos generadas dinámicamente por JavaScript -->
+                    <tr>
+                        <td><button class="remove-btn"><i class="far fa-times-circle"></i></button></td>
+                        <td><img src="../img/productos/f1.jpg" alt="Cartoon Astronaut T-Shirts"></td>
+                        <td>Cartoon Astronaut T-Shirts</td>
+                        <td>$118.19</td>
+                        <td><input type="number" value="1" min="1"></td>
+                        <td>$118.19</td>
+                    </tr>
+                    <tr>
+                        <td><button class="remove-btn"><i class="far fa-times-circle"></i></button></td>
+                        <td><img src="../img/productos/f2.jpg" alt="Cartoon Astronaut T-Shirts"></td>
+                        <td>Cartoon Astronaut T-Shirts</td>
+                        <td>$118.19</td>
+                        <td><input type="number" value="1" min="1"></td>
+                        <td>$118.19</td>
+                    </tr>
+                    <tr>
+                        <td><button class="remove-btn"><i class="far fa-times-circle"></i></button></td>
+                        <td><img src="../img/productos/f3.jpg" alt="Cartoon Astronaut T-Shirts"></td>
+                        <td>Cartoon Astronaut T-Shirts</td>
+                        <td>$118.19</td>
+                        <td><input type="number" value="1" min="1"></td>
+                        <td>$118.19</td>
+                    </tr>
                 </tbody>
             </table>
         </section>
 
-        <!-- Cupón y total -->
+        <!-- aplicar cupon / total del carrito -->
         <section id="cart-add" class="section-p1">
             <div id="coupon">
-                <h3>Cupón de descuentos</h3>
+                <h3>Aplicar Cupón</h3>
                 <div>
-                    <input type="text" placeholder="Código de cupón">
+                    <input type="text" placeholder="Ingresa tu cupón">
                     <button class="normal">Aplicar</button>
                 </div>
             </div>
@@ -73,7 +102,7 @@
                 <table>
                     <tr>
                         <td>Subtotal del Carrito</td>
-                        <td id="total">$0.00</td>
+                        <td id="total">$335</td>
                     </tr>
                     <tr>
                         <td>Envío</td>
@@ -81,7 +110,7 @@
                     </tr>
                     <tr>
                         <td><strong>Total</strong></td>
-                        <td><strong id="total-final">$0.00</strong></td>
+                        <td><strong id="total">$335</strong></td>
                     </tr>
                 </table>
                 <button class="normal">Proceder al pago</button>
@@ -92,8 +121,8 @@
     <!-- FOOTER -->
     <footer class="section-p1">
         <div class="col">
-      
-            <p><strong>Dirección:</strong> zapatillasaultimomomento@gmail.com</p>
+            <h4>Contacto</h4>
+            <p><strong>Dirección:</strong> Av. Siempreviva 742, Ciudad Autónoma de Buenos Aires</p>
             <p><strong>Teléfono:</strong> +54 11 1234 5678</p>
             <p><strong>Horario:</strong> 9:00 - 18:00, Lunes a Viernes</p>
             <div class="follow">
@@ -105,9 +134,17 @@
                     <i class="fab fa-pinterest-p"></i>
                     <i class="fab fa-youtube"></i>
                 </div>
+
             </div>
         </div>
-
+        <div class="col">
+            <h4>Mi Cuenta</h4>
+            <a href="#">Iniciar Sesión</a>
+            <a href="#">Ver Carrito</a>
+            <a href="#">Mis Favoritos</a>
+            <a href="#">Seguimiento de Pedido</a>
+            <a href="#">Ayuda</a>
+        </div>
         <div class="col install">
             <h4>Descargá la App</h4>
             <p>Desde App Store o Google Play</p>
@@ -118,15 +155,16 @@
             <p>Pasarelas de pago seguras</p>
             <img src="../img/pay/pay.png" alt="Métodos de Pago">
         </div>
-
         <div class="copyright">
-            <p>© 2025 Emmanuel Gonzalez | Talento Tech - Plantilla HTML CSS para Ecommerce</p>
+            <p>© 2025, Nefle Miguel Angél | Talento Tech - Plantilla HTML CSS para Ecommerce</p>
         </div>
     </footer>
 
-    <!-- Scripts -->
     <script src="../script/script.js"></script>
     <script src="../script/carrito.js"></script>
+</body>
+
+</html>
 </body>
 
 </html>
