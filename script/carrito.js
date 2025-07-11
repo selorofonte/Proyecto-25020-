@@ -15,7 +15,7 @@ function cargarProductosCarrito() {
 
     if (carrito.length === 0) {
         // Mostrar mensaje si el carrito está vacío
-        document.querySelector('#tabla_carrito').innerHTML = '<tr><td colspan="6" style="text-align: center; padding: 20px;">Tu carrito está vacío. Agrega productos desde la <a href="..pages/catalogo.html">tienda</a>.</td></tr>';
+        document.querySelector('#tabla_carrito').innerHTML = '<tr><td colspan="6" style="text-align: center; padding: 20px;">Tu carrito está vacío. Agrega productos desde el <a href="./catalogo.html">catalogo</a>.</td></tr>';
     } else {
         carrito.forEach(producto => {
             const filaHTML = crearFilaProducto(producto);
