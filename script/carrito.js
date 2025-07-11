@@ -154,6 +154,7 @@ function actualizarTotales() {
     });
 
     // Actualizar el total general
-    actualizarTotalCarrito(subtotalCalculado);
+    const totalElemento = document.querySelector('#total');
+    if (totalElemento) totalElemento.innerHTML = (subtotal + costoEnvio).toFixed(2);
 }
 
