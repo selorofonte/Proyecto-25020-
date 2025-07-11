@@ -3,10 +3,10 @@ document.addEventListener('DOMContentLoaded', () => {
     cargarProductosCarrito();
 });
 
-// ----------------------------------------------------------------------- //
+
 // Cargamos los productos que se encuentran en localStorage
 function cargarProductosCarrito() {
-    // Obtenemos el carrito
+    
     const carrito = JSON.parse(localStorage.getItem('carritoDeCompras')) || [];
 
     document.querySelector('#tabla_carrito').innerHTML = ''; // Limpiar el contenido existente de la tabla
@@ -24,15 +24,15 @@ function cargarProductosCarrito() {
         });
     }
 
-    // Actualizar el subtotal y el total en la sección de resumen
+    // subtotal y el total 
     actualizarTotalCarrito(subtotalCalculado);
 
-    // Eventos a botones de eliminar o campos de cantidad 
+  
     eventosFila();
 }
 
-// ---------------------------------------------- //
-// Funciones auxiliares
+
+// Funciones 
 
 function crearFilaProducto(producto) {
     const productoSubtotal = (producto.price * producto.cantidad).toFixed(2);
@@ -59,12 +59,12 @@ function actualizarTotalCarrito(subtotal) {
     document.querySelectorAll('#total').forEach(elemento => elemento.innerHTML = subtotal.toFixed(2))
 }
 
-// ------------------------------------------------- //
-// Lógica para eliminar o cambiar cantidad
+
+// eliminar o cambiar cantidad
 
 function eventosFila() {
 
-    // Eventos para botones de eliminar
+   
     //const botonesEliminar = document.querySelectorAll('.remove-btn');
     document.querySelectorAll('.remove-btn').forEach(boton => {
         boton.addEventListener('click', () => {
@@ -92,7 +92,7 @@ function eventosFila() {
     });
 
 
-    // Eventos para cambiar cantidad
+    // cambiar cantidad
 
     document.querySelectorAll('.cantidad-producto').forEach(input => {
         input.addEventListener('change', () => {
@@ -103,7 +103,7 @@ function eventosFila() {
             const productId = parseInt(input.id);
             const nuevaCantidad = parseInt(input.value);
 
-            // Validar que la cantidad sea válida
+            // Validar cantidad
             if (nuevaCantidad < 1) {
                 input.value = 1;
                 return;
@@ -119,7 +119,7 @@ function eventosFila() {
                 // Actualizar localStorage
                 localStorage.setItem('carritoDeCompras', JSON.stringify(carrito));
 
-                // Recalcular y actualizar solo los totales (sin recargar toda la tabla)
+                // Recalcular y actualizar solo los totales 
                 actualizarTotales();
 
                 console.log(`Cantidad del producto ID ${productId} actualizada a ${nuevaCantidad}`);
@@ -134,7 +134,7 @@ function actualizarTotales() {
     const carrito = JSON.parse(localStorage.getItem('carritoDeCompras')) || [];
     let subtotalCalculado = 0;
 
-    // Recalcular subtotal
+    // calcular subtotal
     carrito.forEach(producto => {
         subtotalCalculado += producto.price * producto.cantidad;
     });
@@ -154,7 +154,7 @@ function actualizarTotales() {
         }
     });
 
-    // Actualizar el total general
+    // Actualizar el total final
     actualizarTotalCarrito(subtotalCalculado);
 }
 
