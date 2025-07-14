@@ -2,121 +2,152 @@ footer {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    padding: 60px 80px;
+    background-color: #f8f8f8;
+    color: #222;
+    line-height: 1.6;
 
     .col {
         display: flex;
         flex-direction: column;
         align-items: flex-start;
-        margin-bottom: 20px;
+        margin-bottom: 30px;
+        width: 22%;
+        min-width: 200px;
+
+        &:not(:last-child) {
+            margin-right: 20px;
+        }
     }
 
     .logo {
-        margin-bottom: 30px;
+        margin-bottom: 25px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: #dd562c;
     }
 
     & h4 {
-        font-size: 14px;
-        padding-bottom: 20px;
+        font-size: 15px;
+        margin-bottom: 15px;
+        color: #111;
     }
 
     & p {
-        font-size: 13px;
-        margin: 0 0 8px 0;
+        font-size: 14px;
+        margin-bottom: 8px;
+        color: #444;
     }
 
     & a {
-        font-size: 13px;
+        font-size: 14px;
         text-decoration: none;
         color: #222;
         margin-bottom: 10px;
+        transition: color 0.3s ease;
     }
 
     .follow {
-        margin-top: 20px;
+        margin-top: 25px;
+        display: flex;
+        align-items: center;
+        gap: 12px;
 
         & i {
+            font-size: 18px;
             color: #465b52;
-            padding-right: 4px;
+            transition: color 0.3s ease;
             cursor: pointer;
         }
     }
 
     .install {
-        /* & img {
-            margin: 10px 0 15px 0;
-        } */
+        .row {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
 
         .row img {
             margin: 10px 0 15px 0;
             border: 1px solid #088178;
             border-radius: 6px;
+            max-width: 120px;
         }
     }
 
+    .copyright {
+        width: 100%;
+        text-align: center;
+        margin-top: 30px;
+        font-size: 13.5px;
+        color: #666;
+    }
+
+  
+    .follow i:hover,
+    a:hover {
+        color: #088178;
+    }
 }
 
 
-footer .follow i:hover,
-footer a:hover {
-    color: #088178;
-}
 
-footer .copyright {
-    width: 100%;
-    text-align: center;
-}
-
-
-/* Estilos Responsive para Footer */
 @media (max-width: 1200px) {
     footer {
-        padding: 40px 60px;
-    }
-    
-    footer .col {
-        padding-right: 20px;
+        padding: 50px 60px;
+        gap: 20px;
+
+        .col {
+            width: 45%;
+        }
     }
 }
 
 @media (max-width: 992px) {
     footer {
-        padding: 40px 20px;
+        flex-direction: row;
+        padding: 40px 30px;
 
         .col {
-            width: 45%;
-            margin-bottom: 25px;
+            width: 48%;
         }
     }
-
 }
 
 @media (max-width: 768px) {
     footer {
+        flex-direction: row;
+        gap: 30px;
+
         .col {
-            width: 48%;
+            width: 100%;
         }
 
         .copyright {
             margin-top: 20px;
+            font-size: 13px;
         }
     }
-
 }
 
 @media (max-width: 576px) {
     footer {
         flex-direction: column;
+        padding: 40px 20px;
 
         .col {
             width: 100%;
-            margin-bottom: 30px;
+            margin-bottom: 25px;
         }
 
+        .row {
+            justify-content: center;
+        }
 
         .copyright {
-            margin-top: 10px;
-            font-size: 13px;
+            margin-top: 15px;
+            font-size: 12.5px;
         }
     }
-
 }
