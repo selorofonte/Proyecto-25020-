@@ -3,77 +3,85 @@
     justify-content: space-between;
     flex-wrap: wrap;
     align-items: center;
+    padding: 50px 80px;
     background-color: #1b8332;
+    gap: 30px;
 
-    & h4 {
-        font-size: 22px;
-        font-weight: 700;
-        color: #fffefe;
-    }
+    .newstext {
+        flex: 1;
+        min-width: 260px;
 
-    & p {
-        font-size: 16px;
-        font-weight: 600;
-        color: #040b16;
-    }
+        & h4 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #fffefe;
+            margin-bottom: 10px;
+        }
 
-    & p span {
-        color: #ffbd27;
+        & p {
+            font-size: 1rem;
+            font-weight: 600;
+            color: #040b16;
+
+            & span {
+                color: #ffbd27;
+            }
+        }
     }
 
     .form {
         display: flex;
-        width: 40%;
+        flex: 1;
+        min-width: 280px;
+        max-width: 500px;
 
         & input {
+            flex: 1;
             height: 3.125rem;
             padding: 0 1.25rem;
             font-size: 14px;
-            width: 100%;
             border: 1px solid transparent;
-            border-radius: 4px;
+            border-radius: 4px 0 0 4px;
             outline: none;
-            border-top-right-radius: 0;
-            border-bottom-right-radius: 0;
+            background-color: #fff;
         }
 
         & button {
             font-size: 14px;
             font-weight: 600;
-            padding: 15px 30px;
+            padding: 0 25px;
             color: #fff;
             background-color: #dd562c;
             white-space: nowrap;
-            border-radius: 4px;
+            border-radius: 0 4px 4px 0;
             cursor: pointer;
             border: none;
             outline: none;
-            transition: 0.2s;
-            border-top-left-radius: 0;
-            border-bottom-left-radius: 0;
+            transition: background-color 0.3s ease;
+        }
+
+        & button:hover {
+            background-color: #c14922;
         }
     }
-
-
-
 }
 
 
-/* Estilos Responsive para noticias */
+
 @media (max-width: 1200px) {
     .noticias {
         padding: 40px 60px;
-    }
-    
-    .noticias .form {
-        width: 45%;
+
+        .form {
+            max-width: 100%;
+        }
     }
 }
 
 @media (max-width: 992px) {
     .noticias {
         .form {
-            width: 80%;
+            width: 100%;
         }
     }
 }
@@ -82,33 +90,45 @@
     .noticias {
         flex-direction: column;
         align-items: flex-start;
+        padding: 30px 20px;
 
         .newstext {
-            margin-bottom: 20px;
             width: 100%;
         }
 
-
+        .form {
+            width: 100%;
+        }
     }
-
 }
 
 @media (max-width: 576px) {
     .noticias {
-        padding: 20px 10px;
+        padding: 25px 15px;
 
-        & h4 {
-            font-size: 18px;
+        .newstext h4 {
+            font-size: 1.2rem;
+        }
+
+        .newstext p {
+            font-size: 0.95rem;
         }
 
         .form {
+            flex-direction: column;
+            gap: 10px;
 
-            width: 100%;
-
+            & input,
             & button {
-                padding: 12px 15px;
+                border-radius: 4px;
+                width: 100%;
+                height: 48px;
             }
 
+            & button {
+                padding: 0;
+                font-size: 0.95rem;
+            }
         }
     }
 }
