@@ -1,4 +1,4 @@
-// Script for navigation bar
+// Barra de navegacion
 const bar = document.getElementById('bar');
 const nav = document.getElementById('navbar');
 const cerrar = document.getElementById('close');
