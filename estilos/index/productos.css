@@ -1,131 +1,158 @@
 .section-productos {
     text-align: center;
+    padding: 40px 60px;
+
+    h2 {
+        font-size: 2.2rem;
+        margin-bottom: 10px;
+        color: #1a1a1a;
+    }
+
+    p {
+        font-size: 1rem;
+        color: #444;
+    }
 
     .productos-container {
-
         display: flex;
         justify-content: space-between;
-        padding-top: 20px;
         flex-wrap: wrap;
-
-
+        gap: 25px;
+        padding-top: 30px;
 
         .producto {
             width: 23%;
             min-width: 250px;
-            margin: 15px 0;
-            padding: 10px 12px;
-            border-radius: 20px;
+            background-color: #fff;
+            padding: 12px;
+            border-radius: 16px;
             border: 1px solid #cce7d0;
-            cursor: pointer;
-            box-shadow: 20px 20px 30px rgba(0, 0, 0, 0.02);
-            transition: 0.8s ease;
-            /* posicionamos el carrito */
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.03);
+            transition: box-shadow 0.4s ease, transform 0.3s ease;
             position: relative;
+            cursor: pointer;
 
-            & img {
+            &:hover {
+                box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
+                transform: translateY(-4px);
+            }
+
+            img {
                 width: 100%;
-                border-radius: 20px;
                 height: 250px;
                 object-fit: contain;
+                border-radius: 12px;
                 display: block;
             }
 
             .producto-descripcion {
-                text-align: start;
-                padding: 10px 0;
-                min-height: 80px;
+                text-align: left;
+                padding: 12px 5px 0;
                 display: flex;
-                /* Añade flexbox para mejor control del contenido */
                 flex-direction: column;
-                justify-content: flex-start;
-                /* Alinea el contenido al inicio */
+                min-height: 100px;
 
-                & span {
+                span {
+                    font-size: 13px;
                     color: #606063;
-                    font-size: 12px;
+                    margin-bottom: 5px;
                 }
 
-                & h5 {
-                    padding-top: 7px;
-                    color: #1a1a1a;
+                h5 {
                     font-size: 16px;
+                    font-weight: 500;
+                    color: #1a1a1a;
+                    margin-bottom: 8px;
                 }
 
-                & h4 {
-                    padding-top: 7px;
+                h4 {
                     font-size: 18px;
                     font-weight: 700;
                     color: #088178;
                     margin-top: auto;
                 }
             }
-
-
-        }
-
-        .producto:hover {
-            box-shadow: 20px 20px 30px rgba(0, 0, 0, 0.15);
         }
     }
-
 }
 
 
-/* Estilos Responsive para Productos */
 
 @media (max-width: 1200px) {
-    .section-productos .productos-container {
-        justify-content: space-around;
+    .section-productos {
+        padding: 30px 40px;
     }
 
-    .section-productos .productos-container .producto {
-        margin: 15px 10px;
+    .productos-container {
+        justify-content: center;
+    }
+
+    .producto {
+        width: 30%;
     }
 }
 
 @media (max-width: 992px) {
     .section-productos h2 {
-        font-size: 1.8rem;
+        font-size: 2rem;
     }
 
     .section-productos p {
-        font-size: 0.9rem;
+        font-size: 0.95rem;
     }
 
-    .section-productos .productos-container .producto {
-        width: 30%;
-        min-width: 220px;
+    .productos-container .producto {
+        width: 45%;
     }
 }
 
 @media (max-width: 768px) {
-    .section-productos .productos-container .producto {
-        width: 45%;
-        min-width: 200px;
+    .section-productos {
+        padding: 30px 20px;
     }
 
-    .section-productos .productos-container {
-        justify-content: space-between;
+    .productos-container .producto {
+        width: 48%;
     }
 }
 
 @media (max-width: 576px) {
     .section-productos {
-        padding: 20px 10px;
+        padding: 20px 15px;
+
+        h2 {
+            font-size: 1.6rem;
+        }
+
+        p {
+            font-size: 0.9rem;
+        }
     }
 
-    .section-productos h2 {
-        font-size: 1.5rem;
+    .productos-container {
+        gap: 20px;
     }
 
-    .section-productos .productos-container .producto {
+    .producto {
         width: 100%;
-        min-width: unset;
-        margin: 10px 0;
-    }
+        padding: 10px;
 
-    .section-productos .productos-container .producto .producto-descripcion h5 {
-        font-size: 13px;
+        img {
+            height: 200px;
+        }
+
+        .producto-descripcion {
+            h5 {
+                font-size: 14px;
+            }
+
+            h4 {
+                font-size: 16px;
+            }
+
+            span {
+                font-size: 12px;
+            }
+        }
     }
 }
