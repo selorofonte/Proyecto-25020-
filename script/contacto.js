@@ -1,5 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     const formulario = document.getElementById('formularioContacto');
+
+    // Definición de los campos con sus mensajes de error
     const campos = {
         tuNombre: {
             input: document.getElementById('tuNombre'),
@@ -20,16 +22,18 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     };
 
+    // Valida formato de correo electrónico
     const esCorreoValido = (correo) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(correo);
 
+    // Muestra u oculta mensaje de error en un campo
     const mostrarEstadoCampo = (input, esValido, mensaje = '') => {
         const contenedor = input.parentNode;
         const textoError = contenedor.querySelector('.texto-error');
-
         contenedor.classList.toggle('error', !esValido);
         textoError.textContent = esValido ? '' : mensaje;
     };
 
+    // Verifica que el campo no esté vacío y que el correo sea válido
     const validarCampo = ({ input, mensajeVacio, mensajeInvalido = '' }) => {
         const valor = input.value.trim();
         if (valor === '') {
@@ -44,12 +48,14 @@ document.addEventListener('DOMContentLoaded', () => {
         return true;
     };
 
+    // Valida campo individual al cambiar su valor
     Object.values(campos).forEach(({ input, mensajeVacio, mensajeInvalido }) => {
         input.addEventListener('change', () => {
             validarCampo({ input, mensajeVacio, mensajeInvalido });
         });
     });
 
+    // Valida el formulario completo y lo envía si es válido
     formulario.addEventListener('submit', (e) => {
         e.preventDefault();
 
@@ -62,6 +68,7 @@ document.addEventListener('DOMContentLoaded', () => {
             return;
         }
 
+        // Envío del formulario a Formspree
         fetch('https://formspree.io/f/mldnqlgj', {
             method: 'POST',
             headers: { 'Accept': 'application/json' },
