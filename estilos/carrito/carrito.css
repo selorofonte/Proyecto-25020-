@@ -1,7 +1,7 @@
-/* Cart Table Section */
+
 #cart {
     overflow-x: auto;
-    /* Ensures table is scrollable on small screens */
+    -webkit-overflow-scrolling: touch; 
 }
 
 #cart table {
@@ -9,75 +9,72 @@
     border-collapse: collapse;
     table-layout: fixed;
     white-space: nowrap;
-}
+    min-width: 600px; 
 
 #cart table img {
     width: 70px;
     border-radius: 5px;
+    object-fit: cover;
 }
 
 #cart table td:nth-child(1) {
-    /* REMOVE column */
-    width: 100px;
+    width: 80px;
     text-align: center;
 }
 
 #cart table td:nth-child(2) {
-    /* IMAGE column */
-    width: 150px;
+    width: 120px;
     text-align: center;
 }
 
 #cart table td:nth-child(3) {
-    /* PRODUCT column */
-    width: 250px;
-    text-align: center;
+    width: 220px;
+    text-align: left;
+    padding-left: 10px;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 #cart table td:nth-child(4),
-/* PRICE column */
 #cart table td:nth-child(5),
-/* QUANTITY column */
 #cart table td:nth-child(6) {
-    /* SUBTOTAL column */
-    width: 150px;
+    width: 120px;
     text-align: center;
 }
 
 #cart table td:nth-child(5) input {
-    width: 50px;
-    padding: 5px 10px;
+    width: 60px;
+    padding: 6px 10px;
     text-align: center;
     border: 1px solid #ccc;
     border-radius: 4px;
+    font-size: 14px;
 }
 
 #cart table thead {
     border: 1px solid #e2e9e1;
     border-left: none;
     border-right: none;
+    background-color: #f9f9f9;
 }
 
 #cart table thead td {
     font-weight: 700;
     text-transform: uppercase;
     font-size: 13px;
-    padding: 18px 0;
+    padding: 16px 0;
 }
 
 #cart table tbody tr td {
-    padding-top: 15px;
-}
-
-#cart table tbody td {
+    padding: 12px 10px;
     font-size: 13px;
+    vertical-align: middle;
 }
 
-/* Remove Button Styling */
+
 .remove-btn {
     background-color: transparent;
     border: 1px solid #dc3545;
-    /* Red color for remove */
     color: #dc3545;
     border-radius: 50%;
     width: 30px;
@@ -85,7 +82,7 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    font-size: 0.9rem;
+    font-size: 1rem;
     cursor: pointer;
     transition: 0.3s ease;
 }
@@ -95,12 +92,13 @@
     color: white;
 }
 
-/* Cart Add Section (Coupon and Totals) */
+
 #cart-add {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     margin-top: 50px;
+    gap: 30px;
 }
 
 #coupon,
@@ -108,28 +106,47 @@
     width: 48%;
     border: 1px solid #e2e9e1;
     padding: 30px;
+    border-radius: 8px;
+    background-color: #fafafa;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
 }
 
 #coupon h3,
 #subtotal h3 {
     padding-bottom: 15px;
+    font-weight: 700;
+    color: #222;
 }
 
 #coupon input {
-    width: 60%;
-    padding: 10px 20px;
+    width: 65%;
+    max-width: 300px;
+    padding: 12px 18px;
     outline: none;
     border: 1px solid #e2e9e1;
-    margin-right: 10px;
+    border-radius: 6px;
+    font-size: 14px;
+    transition: border-color 0.3s ease;
+}
+
+#coupon input:focus {
+    border-color: #dd562c;
+    box-shadow: 0 0 5px rgba(221, 86, 44, 0.4);
 }
 
 #coupon button.normal {
     background-color: #dd562c;
     color: #fff;
-    padding: 10px 20px;
+    padding: 12px 25px;
     border: none;
     cursor: pointer;
     font-weight: 600;
+    border-radius: 6px;
+    transition: background-color 0.3s ease;
+}
+
+#coupon button.normal:hover {
+    background-color: #066f66;
 }
 
 #subtotal table {
@@ -139,28 +156,36 @@
 }
 
 #subtotal table td {
-    padding: 10px 0;
+    padding: 12px 15px;
     border: 1px solid #e2e9e1;
     padding-left: 10px;
+    font-size: 14px;
+    color: #222;
 }
 
 #subtotal table tr:last-child td {
-    font-weight: bold;
+    font-weight: 700;
+    font-size: 16px;
 }
 
 #subtotal button.normal {
     background-color: #dd562c;
     color: #fff;
-    padding: 12px 20px;
+    padding: 14px 20px;
     border: none;
     cursor: pointer;
     font-weight: 600;
     width: 100%;
-    font-size: 1rem;
+    font-size: 1.1rem;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
 }
 
+#subtotal button.normal:hover {
+    background-color: #066f66;
+}
 
-/* Responsive  */
+/* Responsive */
 @media (max-width: 799px) {
     #cart-add {
         flex-direction: column;
@@ -175,34 +200,40 @@
 
 @media (max-width: 477px) {
     .section-p1 {
-        padding: 20px;
+        padding: 20px 15px;
+    }
+
+    #cart table {
+        min-width: 500px; 
     }
 
     #cart table td:nth-child(1) {
-        width: 60px;
+        width: 50px;
     }
 
     #cart table td:nth-child(2) {
-        width: 80px;
-    }
-
-    #cart table td:nth-child(3) {
-        width: 150px;
-    }
-
-    #cart table td:nth-child(4) {
-        width: 80px;
-    }
-
-    #cart table td:nth-child(5) {
         width: 70px;
     }
 
+    #cart table td:nth-child(3) {
+        width: 120px;
+        text-align: left;
+        padding-left: 8px;
+        white-space: normal; 
+    }
+
+    #cart table td:nth-child(4),
+    #cart table td:nth-child(5),
     #cart table td:nth-child(6) {
         width: 80px;
+        font-size: 12px;
+        padding: 8px 5px;
     }
 
     #cart table td:nth-child(5) input {
         width: 40px;
+        padding: 5px 8px;
+        font-size: 12px;
     }
+  }
 }
