@@ -2,12 +2,13 @@
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
-  margin: 30px;
+  margin: 30px 60px;
   padding: 80px;
   border: 1px solid #e1e1e1;
   border-radius: 15px;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
   background: #fdfdfd;
+  gap: 30px;
 }
 
 .form-details form {
@@ -29,6 +30,7 @@
   line-height: 35px;
   padding: 10px 0 20px;
   color: #333;
+  font-weight: 700;
 }
 
 .form-details form input,
@@ -41,6 +43,12 @@
   background: #fff;
   outline: none;
   transition: border-color 0.3s, box-shadow 0.3s;
+  resize: vertical;
+  min-height: 44px;
+}
+
+.form-details form textarea {
+  min-height: 100px;
 }
 
 .form-details form input::placeholder,
@@ -64,6 +72,8 @@
   font-size: 16px;
   font-weight: 600;
   transition: background-color 0.3s ease, transform 0.2s;
+  align-self: flex-start;
+  min-width: 140px;
 }
 
 .form-details form button:hover {
@@ -140,30 +150,38 @@
   }
 }
 
+
 @media (max-width: 799px) {
   .form-details {
     flex-direction: column;
-    padding: 40px;
+    padding: 40px 30px;
+    margin: 20px 30px;
   }
 
   .form-details form {
     width: 100%;
     margin-right: 0;
   }
+
+  .form-details form button {
+    align-self: stretch;
+    min-width: unset;
+  }
 }
 
 @media (max-width: 477px) {
   .form-details {
-    margin: 10px;
+    margin: 10px 15px;
     padding: 30px 15px;
-  }
-
-  .form-details form {
-    margin-bottom: 30px;
   }
 
   .form-details form h2 {
     font-size: 22px;
     line-height: 30px;
+  }
+
+  .form-details form button {
+    padding: 12px;
+    font-size: 14px;
   }
 }
