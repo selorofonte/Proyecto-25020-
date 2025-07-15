@@ -1,3 +1,6 @@
+Objetivos
+
+
 1. Estructura Básica de HTML.
 
 Estructura semántica: El HTML debe estar dividido en las etiquetas semánticas principales: header, nav, main, section, footer.
